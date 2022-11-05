@@ -13,6 +13,8 @@
 # Testado e homologado para a versão do pfSense 2.6.x e Plus 22.x
 # Testado e homologado para a versão do SpeedTest 2.1.x
 #
+# Utilizado por: Goiânia - EFG José Luiz Bittencourt
+#
 # OBSERVAÇÃO IMPORTANTE: para os script em Shell funcionar corretamente no agendamento do CRON
 # é recomendado que todos os comandos sejam declarados utilizando o caminho absoluto, com isso
 # o agendamento no pfSense funciona corretamente.
