@@ -89,6 +89,20 @@ Link da vídeo aula: https://www.youtube.com/watch?v=-87sqR6csqM
 
 Documentação da vídeo aula: https://github.com/vaamonde/pfsense/blob/main/pfsense-2.6-plus/Etapa-005-AtualizandoOpfSense-Plus-22.05.txt
 
+## **COMO ATUALIZAR a versão do pfSENSE PLUS+ 22.05 para NOVA versão 23.01**
+
+Vídeo mostrando os procedimentos básicos para fazer o Upgrade da versão do Firewall pfSense PLUS+ 22.05 para a nova versão 23.01 lançada em Fevereiro/2023
+
+Novos recursos e atualizações da Versão 23.01: https://docs.netgate.com/pfsense/en/latest/releases/23-01.html
+
+Lançamento da versão do pfSense Plus 23.01: https://www.netgate.com/blog/23.01-release-now-available
+
+[![Upgrade 23.01](http://img.youtube.com/vi/_hxdQG-3GGI/0.jpg)](https://www.youtube.com/watch?v=_hxdQG-3GGI "Upgrade 23.01")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=_hxdQG-3GGI
+
+Documentação da vídeo aula: https://github.com/vaamonde/pfsense/blob/main/pfsense-2.6-plus/Etapa-023-AtualizandoOpfSense-Plus-23.01.txt
+
 ## **COMO CONFIGURAR o Dashboard do pfSENSE PLUS+ 22.05**
 
 Vídeo mostrando os procedimentos básicos para configurar e utilizar o Dashboard (Painel de Instrumentos) do WebGUI (Graphics User Interface) WebConfigurator do pfSENSE PLUS+ 22.05.
@@ -265,13 +279,13 @@ Vídeo mostrando os procedimentos básicos para instalar e configurar o Widget (
 
 O speedtest ou speedtest-cli é uma interface de linha de comando de código aberto para testar a largura de banda da Internet que também pode ser utilizado diretamente pelo navegador. É uma pequena ferramenta rápida para verificar a velocidade de download e upload.
 
-[![SpeedTest pfSense Plus](http://img.youtube.com/vi//0.jpg)]( "SpeedTest pfSense Plus")
+[![SpeedTest pfSense Plus](http://img.youtube.com/vi/hPhRwLGs79U/0.jpg)](https://www.youtube.com/watch?v=hPhRwLGs79U "SpeedTest pfSense Plus")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=hPhRwLGs79U
 
 Documentação da vídeo aula: https://github.com/vaamonde/pfsense/blob/main/pfsense-2.6-plus/Etapa-019-AdicionandoWidgetSpeedTest.txt
 
-## **COMO ADICIONAR uma Nova Interface WAN (Multi-WAN) no pfSENSE PLUS+ 22.05**
+## **COMO ADICIONAR uma Nova Interface WAN (Multi-WAN ou Dual-WAN) no pfSENSE PLUS+ 22.05**
 
 Vídeo mostrando os procedimentos básicos para adicionar uma nova Interface WAN (Wide Area Network) no pfSENSE PLUS+ 22.05.
 
@@ -279,15 +293,39 @@ Os recursos de várias WANs (multi-WAN) do pfSense permitem que um firewall util
 
 O software pfSense é capaz de lidar com várias interfaces WAN, com várias implantações usando mais de 10 WANs em produção.
 
-[![Multi-WAN pfSense Plus](http://img.youtube.com/vi//0.jpg)]( "Multi-WAN pfSense Plus")
+[![Multi-WAN pfSense Plus](http://img.youtube.com/vi/S_CHo4Wk5Bg/0.jpg)](https://www.youtube.com/watch?v=S_CHo4Wk5Bg "Multi-WAN pfSense Plus")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=S_CHo4Wk5Bg
 
 Documentação da vídeo aula: https://github.com/vaamonde/pfsense/blob/main/pfsense-2.6-plus/Etapa-020-AdicionarNovaInterface-WAN.txt
 
-## **COMO CONFIGURAR o Failover HA (High Availability - Alta Disponibilidade) das Interface WAN (Internet) no pfSENSE PLUS+ 22.05**
+## **COMO CONFIGURAR o iPerf3 Server e Client no pfSENSE PLUS+ 22.05**
 
-Vídeo mostrando os procedimentos básicos para configurar o Failover HA (High Availability) das Interface WAN (Wide Area Network) no pfSENSE PLUS+ 22.05.
+Vídeo mostrando os procedimentos básicos para instalar e configurar o software de medição de largura de banda iPerf3 no pfSENSE PLUS+ 22.05.
+
+iPerf3 é uma ferramenta para medição e ajuste de desempenho de rede. É uma ferramenta multiplataforma que pode produzir medições de desempenho padronizadas para qualquer rede.
+
+[![iPerf3 pfSense Plus](http://img.youtube.com/vi/MX3BfW-8DP8/0.jpg)](https://www.youtube.com/watch?v=MX3BfW-8DP8 "iPerf3 pfSense Plus")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=MX3BfW-8DP8
+
+Documentação da vídeo aula: https://github.com/vaamonde/pfsense/blob/main/pfsense-2.6-plus/Etapa-021-TesteDeLarguraDeBanda-IPerf3.txt
+
+## **COMO CONFIGURAR o NTopNG no pfSENSE PLUS+ 22.05**
+
+Vídeo mostrando os procedimentos básicos para instalar e configurar o software de monitoramento de tráfego NTopNG no pfSENSE PLUS+ 22.05.
+
+NTop-NG é um software de computador para monitorar o tráfego em uma rede de computadores. Ele foi projetado para ser um substituto de alto desempenho e baixo recurso para o ntop. O nome é derivado de ntop de próxima geração.
+
+[![NTopNG pfSense Plus](http://img.youtube.com/vi/hWy0mG-_NqE/0.jpg)](https://www.youtube.com/watch?v=hWy0mG-_NqE "NTopNG pfSense Plus")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=hWy0mG-_NqE
+
+Documentação da vídeo aula: https://github.com/vaamonde/pfsense/blob/main/pfsense-2.6-plus/Etapa-022-MonitoramentoDeRede-NTopNG.txt
+
+## **COMO CONFIGURAR o Failover e Failback HA (High Availability) das Interface WAN no pfSENSE PLUS+ 22.05**
+
+Vídeo mostrando os procedimentos básicos para configurar o Grupo de Gateways de Failover (Falha) e Failback (Retorno da Falha) para suportar o HA (High Availability) das Interface de Internet WAN (Wide Area Network) no pfSENSE PLUS+ 22.05.
 
 Failover refere-se à capacidade de alternar de uma ou mais WANs para um conjunto alternativo de WANs se as conexões preferenciais falharem. Isso é útil para situações em que o tráfego deve utilizar uma conexão WAN específica, a menos que ela não esteja disponível.
 

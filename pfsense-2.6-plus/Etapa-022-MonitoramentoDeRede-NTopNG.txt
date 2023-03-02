@@ -8,8 +8,8 @@ Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Data de criação: 04/11/2022
-Data de atualização: 04/11/2022
-Versão: 0.03
+Data de atualização: 21/12/2022
+Versão: 0.09
 Testado e homologado no Firewall NG UTM Netgate pfSense 2.6.x e Plus 22.x
 
 Versões do software pfSense e FreeBSD: https://docs.netgate.com/pfsense/en/latest/releases/versions.html#x
@@ -24,6 +24,10 @@ Documentação Oficial do Netgate/pfSense em PDF: https://docs.netgate.com/manua
 Lista de Pacotes do pfSense: https://docs.netgate.com/pfsense/en/latest/packages/list.html
 Documentação do NTopNG do pfSense: https://www.ntop.org/guides/ntopng/third_party_integrations/pfsense.html
 
+Teste de velocidade da Internet do NIC.br: https://beta.simet.nic.br
+Teste de velocidade da Internet SpeedTest: https://www.speedttest.net
+Teste de velocidade da Internet Fast: https://fast.com/pt/
+
 Observações das configurações utilizadas nessa documentação
 (Default) = Configuração padrão do pfSense = ON ou OFF ou Value
 (Disable) = Desabilitado nessa configuração = OFF
@@ -37,15 +41,110 @@ System
 		Available Packages
 			Search
 				Search term: ntopng - Both <Search>
-			cron - <+Install>
+			ntopng - <+Install>
 				<Confirm>
 
 Segunda etapa: Configurando o Serviço do NTopNG no pfSense
 Diagnostics
 	NTopNG Settings
 		General Options
-			Enable ntopng: On (Default)
+			Enable ntopng: On (Enable)
+			Keep Data/Settings: On (Default)
+			ntopng Admin Password: pti@2018
+			Confirm ntopng Admin Password pti@2018
+			Interface (utilizar o Shift para selecionar todas as Interfaces ou Ctrl para selecionar individualmente)
+				LAN
+				WAN_NET
+				WAN_VIVO
+			DNS mode: Decode DNS responses and resolve local numeric IPs only (Default)
+		Local Networks
+			Mode: Consider all RFC1918 networks local (Default)
+			Custom networks list: (Default)
+		Utilities
+			GeoLite2 DB License Key (Default)
+			Delete ntopng Data: (Default)
+	<Save>
 
-Terceira etapa: Iniciando o Serviço do NTopNG no pfSense
+Terceira etapa: Cadastramento Gratuito do Maxmind GeoLite2 Database
+Link: https://www.maxmind.com/en/geolite2/signup
 
-Quarta etapa: Acessando o Serviço do NTopNG do pfSense
+OBSERVAÇÃO: após o cadastramento será enviado para o seu email os procedimentos para a criação
+da senha e acesso a sua conta do Maxmind.
+
+Quarta etapa: Gerando uma Chave de Licença do Maxmind GeoLite2 Database
+Se logar com a sua conta no link: https://www.maxmind.com/en/account/login
+	Account
+		Manage License Keys
+			<Generate new license key>
+				License key description: pfsense
+				GeoIP Update: No (Enable)
+			<Confirm>
+	OBSERVAÇÃO: copiar a Chave de Licença na linha: License key
+
+Quinta etapa: Ativar e Atualizar a Chave de Licença do Maxmind GeoLite2 no pfSense
+Diagnostics
+	NTopNG Settings
+		Utilities
+			GeoLite2 DB License Key: (Copiar e Colar a Chave de Licença do Maxmind)
+	<Save>
+
+Diagnostics
+	NTopNG Settings
+		Utilities
+			Update GeoLite2 DB
+	<Save>
+
+Sexta etapa: Liberando o acesso da Porta do NTopNG na Interface LAN no pfSense
+Firewall
+	Rules
+		LAN
+			+ADD
+				Edit Firewall Rule
+					Action: Pass (Default)
+					Disable: OFF (Default)
+					Interface: LAN (Default)
+					Address Family: IPv4 (Default)
+					Protocol: TCP (Enable)
+				Source
+					Source: 
+						Invert match: OFF (Default) - LAN net (Enable)
+					Display Advanced: (Default)
+				Destination
+					Destination: 
+						Invert match: OFF (Default) - LAN address (Enable)
+					Destination Port Range:
+						From: (other) - Custom: 3000 (Enable)
+						To: (other) - Custom: 3000 (Enable)
+				Extra Options
+					Log: ON (Enable)
+					Description: Liberação do Serviço do NTopNG na Interface LAN
+					Advanced Options: (Default)
+			<Save>
+		<Apply Changes>
+
+Sétima etapa: Acessando o Serviço do NTopNG do pfSense
+Diagnostics
+	NTopNG Settings
+		Access ntopng
+			Welcome to ntopng
+			Username: admin (Default)
+			Password: pti@2018
+
+Diagnostics
+	ntopng
+		Welcome to ntopng
+			Username: admin (Default)
+			Password: pti@2018
+
+https://firewall.pti.intra:3000/
+	Welcome to ntopng
+		Username: admin (Default)
+		Password: pti@2018
+
+Oitava etapa: Monitorando o Tráfego de Rede do pfSense utilizando o NTopNG
+Interfaces:
+	em0 = Link de WAN_VIVO
+	em1 = Link de LAN
+	em2 = Link de WAN_NET
+
+Nona etapa: Configurações Básicas do Endpoint e Recipients do NTopNG no pfSense
